@@ -9,7 +9,7 @@ import Image from "next/image";
 const products = [
     {
         id: "hair-growth-complex",
-        //title: "2-in-1 Compounded Spray",
+        title: "2-in-1 Compounded Spray",
         image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767403209/ADAM_lv4w4g.jpg", // Placeholder
         bgColor: "bg-[#EAEAEA]", // Light gray background for the card/image area
         freeGift: true,
@@ -21,6 +21,7 @@ const products = [
         id: "biotin",
         title: "Biotin Plus",
         image: "/placeholder-biotin.png", // Placeholder
+
         bgColor: "bg-[#EAEAEA]",
         freeGift: false,
         features: ["Pharmaceutical-grade biotin", "Strengthens existing hair", "Reduces breakage"],
@@ -79,16 +80,12 @@ export function Products() {
                                                 src={product.image}
                                                 alt={product.title}
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover object-top"
                                             />
-                                            {/* Gradient Overlay for text readability */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
                                         </div>
 
-                                        {/* Title Overlay */}
-                                        <div className="relative z-10 w-full pt-12 px-8">
-                                            <h3 className="text-2xl font-bold text-white text-center">{product.title}</h3>
-                                        </div>
+
 
                                         {/* Free Gift Badge */}
                                         {product.freeGift && (

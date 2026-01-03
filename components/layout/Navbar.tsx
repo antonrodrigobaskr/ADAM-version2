@@ -27,9 +27,9 @@ export function Navbar() {
     }, []);
 
     const navLinks = [
-        { href: "#pricing", label: "Hair Regrowth" },
-        { href: "#features", label: "Sexual Health" },
-        { href: "#about", label: "About Us" },
+        { href: "/", label: "Hair Regrowth" },
+        { href: "/sexual-health", label: "Sexual Health" },
+        { href: "/about", label: "About Us" },
     ];
 
     const menuVariants = {
