@@ -9,8 +9,8 @@ import {
 
 const faqs = [
     {
-        question: "Is ADAM a legitimate medical service?",
-        answer: "Yes. ADAM connects you with licensed doctors in Sri Lanka (SLMC registered). All medications are genuine and dispensed by licensed pharmacies."
+        question: "How do I talk to a doctor?",
+        answer: "You can chat with a doctor in real-time or book an appointment for a video consultation. Our doctors are available to answer your questions and provide personalized advice."
     },
     {
         question: "Do I need a prescription?",
@@ -25,8 +25,8 @@ const faqs = [
         answer: "Absolutely. We comply with all relevant healthcare data privacy regulations. Your medical information is only shared with the doctor and pharmacy team treating you."
     },
     {
-        question: "What does the packaging look like?",
-        answer: "Our packaging is 100% discreet. There is no mention of ADAM, the medication name, or the nature of contents on the outside of the box."
+        question: "How do I pay for my order?",
+        answer: "You can pay for your order using multiple payment methods including credit/debit cards, bank transfer, and cash on delivery (within colombo limits)."
     }
 ];
 

@@ -14,7 +14,7 @@ const reviews = [
     {
         name: "Malik A.",
         location: "Kandy",
-        text: "Honestly, I thought this might be a scam. But they connected me with a real SLMC-registered doctor who explained everything. 4 months in, and my crown is filling in.",
+        text: "I was skeptical at first about online treatments. But connecting with a real SLMC-registered doctor who explained everything gave me confidence. 4 months in, and my crown is filling in.",
         initials: "MA"
     },
     {
