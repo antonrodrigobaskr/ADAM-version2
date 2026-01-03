@@ -8,19 +8,19 @@ const stages = [
         period: "0 to 3 months",
         phase: "Reset phase",
         description: "Don't panic if nothing happens yet—or if you see some shedding. This is normal and a sign the treatment is working.",
-        image: "/timeline/stage-1.png"
+        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767454187/1_hkjwkg.jpg"
     },
     {
         period: "3 to 6 months",
         phase: "Stabilisation",
         description: "Hair loss slows noticeably. Some men start seeing new growth, especially at the hairline and crown.",
-        image: "/timeline/stage-2.png"
+        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767454187/2_r4fc6n.jpg"
     },
     {
         period: "6 to 12 months",
         phase: "Regrowth",
         description: "This is where results become visible. Expect improved density and coverage in thinning areas.",
-        image: "/timeline/stage-3.png"
+        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767454187/3_h9f4pt.jpg"
     }
 ];
 

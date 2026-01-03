@@ -11,14 +11,15 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const results = [
     {
         id: 1,
-        treatment: "Oral Tablet, Minoxidil 5%",
-        duration: "8 months",
-        before: "/placeholder.svg", // Replaced with SVG placeholder in real impl if needed or just use div
-        after: "/placeholder.svg"
+        treatment: "Minoxidil 5%, Finasteride 0.25%, Ketoconazole Shampoo",
+        duration: "3 months",
+        before: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767457643/1_bwaz7c.jpg", // Replaced with SVG placeholder in real impl if needed or just use div
+        after: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767457645/2_k0jdhp.jpg"
     },
     {
         id: 2,
@@ -89,12 +90,22 @@ export function BeforeAfter() {
                                         {/* Images Container */}
                                         <div className="grid grid-cols-2 gap-2 mb-6">
                                             <div className="aspect-[4/5] bg-neutral-200 rounded-2xl overflow-hidden relative">
-                                                {/* Placeholder for Before Image */}
-                                                <div className="absolute inset-0 flex items-center justify-center text-neutral-400 font-medium">Before</div>
+                                                <Image
+                                                    src={result.before}
+                                                    alt="Before treatment"
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                                <div className="absolute top-2 left-2 bg-black/50 text-white px-2 py-1 text-xs rounded-md font-medium">Before</div>
                                             </div>
                                             <div className="aspect-[4/5] bg-neutral-200 rounded-2xl overflow-hidden relative">
-                                                {/* Placeholder for After Image */}
-                                                <div className="absolute inset-0 flex items-center justify-center text-neutral-400 font-medium">After</div>
+                                                <Image
+                                                    src={result.after}
+                                                    alt="After treatment"
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                                <div className="absolute top-2 left-2 bg-black/50 text-white px-2 py-1 text-xs rounded-md font-medium">After</div>
                                             </div>
                                         </div>
 

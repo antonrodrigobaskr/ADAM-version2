@@ -3,16 +3,17 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
+import Image from "next/image";
 
 // Product Data
 const products = [
     {
         id: "hair-growth-complex",
-        title: "Hair Growth Complex",
-        image: "/placeholder-complex.png", // Placeholder
+        //title: "2-in-1 Compounded Spray",
+        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767403209/ADAM_lv4w4g.jpg", // Placeholder
         bgColor: "bg-[#EAEAEA]", // Light gray background for the card/image area
         freeGift: true,
-        features: ["Finasteride + Minoxidil", "94% success rate", "Doctor-prescribed dosage"],
+        features: ["Finasteride 0.25% + Minoxidil 5% - 60ml", "94% success rate", "Doctor-prescribed dosage"],
         price: "Rs 5,960",
         plans: "3, 6 months"
     },
@@ -74,10 +75,14 @@ export function Products() {
                                     <div className={`relative ${product.bgColor} rounded-[2.5rem] min-h-[400px] mb-6 overflow-hidden flex flex-col`}>
                                         {/* Image Background */}
                                         <div className="absolute inset-0 z-0">
-                                            <div className="w-full h-full bg-gradient-to-b from-gray-300 to-gray-400 flex items-center justify-center">
-                                                <div className="text-white/50 font-bold">IMAGE</div>
-                                            </div>
-                                            {/* Use image if available: <img src={product.image} alt={product.title} className="w-full h-full object-cover" /> */}
+                                            <Image
+                                                src={product.image}
+                                                alt={product.title}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                            {/* Gradient Overlay for text readability */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                                         </div>
 
                                         {/* Title Overlay */}
@@ -88,7 +93,7 @@ export function Products() {
                                         {/* Free Gift Badge */}
                                         {product.freeGift && (
                                             <div className="absolute bottom-6 left-6 z-10 bg-[#1A1A1A] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                                                Free Gift
+                                                Rx Only
                                             </div>
                                         )}
                                     </div>

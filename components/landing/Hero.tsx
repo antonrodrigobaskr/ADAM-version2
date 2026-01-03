@@ -137,14 +137,14 @@ export function Hero() {
                             <div className="flex flex-row md:flex-col items-start md:items-center gap-4 text-left md:text-center">
                                 <Package className="w-6 h-6 md:w-8 md:h-8 text-neutral-600 stroke-1 shrink-0 mt-1 md:mt-0" />
                                 <span className="text-sm font-medium text-neutral-700">
-                                    Discreet doorstep delivery – no labels
+                                    Discreet doorstep delivery
                                 </span>
                             </div>
 
                             <div className="flex flex-row md:flex-col items-start md:items-center gap-4 text-left md:text-center">
                                 <MessageCircle className="w-6 h-6 md:w-8 md:h-8 text-neutral-600 stroke-1 shrink-0 mt-1 md:mt-0" />
                                 <span className="text-sm font-medium text-neutral-700">
-                                    Chat with our doctors anytime via WhatsApp
+                                    Chat with ADAM doctors anytime via WhatsApp
                                 </span>
                             </div>
 
