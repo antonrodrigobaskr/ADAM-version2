@@ -8,19 +8,19 @@ const reviews = [
     {
         name: "Kavinda R.",
         location: "Colombo",
-        text: "I was embarrassed to see a doctor face-to-face about my hair loss. ADAM made it private and dignified. The meds are the real deal—my barber noticed before I did.",
+        text: "I was embarrassed to see a doctor face-to-face about my hair loss. It was fully private and online with ADAM. The meds are the real deal—my barber noticed before I did.",
         initials: "KR"
     },
     {
         name: "Malik A.",
         location: "Kandy",
-        text: "I was skeptical at first about online treatments. But connecting with a real SLMC-registered doctor who explained everything gave me confidence. 4 months in, and my crown is filling in.",
+        text: "I was skeptical at first about online treatments. But connecting with a real doctor who explained everything gave me confidence. 3 months in, and my crown is filling in.",
         initials: "MA"
     },
     {
         name: "Prasad J.",
         location: "Galle",
-        text: "My wife noticed my hair looking thicker before I even saw it myself. The discreet packaging was a huge plus—nobody at home knew what I ordered.",
+        text: "My wife noticed my hair looking thicker before I even saw it myself. I've tried everything before, nothing worked. Glad I found this clinic.",
         initials: "PJ"
     }
 ];

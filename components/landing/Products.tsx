@@ -10,21 +10,21 @@ const products = [
     {
         id: "hair-growth-complex",
         title: "2-in-1 Compounded Spray",
-        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767403209/ADAM_lv4w4g.jpg", // Placeholder
+        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767476979/ADAM_15_g2fzok.jpg", // Placeholder
         bgColor: "bg-[#EAEAEA]", // Light gray background for the card/image area
         freeGift: true,
-        features: ["Finasteride 0.25% + Minoxidil 5% - 60ml", "94% success rate", "Doctor-prescribed dosage"],
+        features: ["Finasteride 0.25% + Minoxidil 5% - 60ml", "94% success rate", "ISO:GMP certified"],
         price: "Rs 5,960",
         plans: "3, 6 months"
     },
     {
         id: "biotin",
         title: "Biotin Plus",
-        image: "/placeholder-biotin.png", // Placeholder
+        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767477335/ADAM_16_fvjfum.jpg", // Placeholder
 
         bgColor: "bg-[#EAEAEA]",
         freeGift: false,
-        features: ["Pharmaceutical-grade biotin", "Strengthens existing hair", "Reduces breakage"],
+        features: ["Pharmaceutical-grade minoxidil", "accerlerated hair growth", "ISO:GMP certified"],
         price: "Rs 4,960",
         plans: "3, 6, 12 months"
     }
@@ -54,7 +54,7 @@ export function Products() {
                             transition={{ delay: 0.1 }}
                             className="text-lg text-muted-foreground leading-relaxed"
                         >
-                            The same medications prescribed worldwide—now available in Sri Lanka with a doctor's prescription. NMRA-approved and delivered to your door.
+                            The same medications prescribed worldwide—now available in Sri Lanka with a doctor's prescription, and delivered to your door.
                         </motion.p>
                     </div>
 
