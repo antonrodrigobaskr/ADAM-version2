@@ -64,6 +64,8 @@ export function Science() {
                                         This is the most common question we get, and it's understandable. The truth: in clinical trials, <strong>only about 2% of men experienced any sexual side effects</strong>—which is nearly identical to the placebo group.
                                         <br /><br />
                                         Most men experience no issues at all. For the small percentage who do, side effects typically resolve quickly after stopping the medication. Your ADAM doctor will discuss your personal risk factors before prescribing.
+                                        <br /><br />
+                                        Furthermore, when using topical medications, <strong>systemic absorption is significantly lower compared to oral administration</strong>. Clinical data indicates this targeted delivery method <strong>further minimizes the risk of systemic side effects</strong> while maintaining efficacy.
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
