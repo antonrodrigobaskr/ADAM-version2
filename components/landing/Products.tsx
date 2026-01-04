@@ -20,7 +20,7 @@ const products = [
     {
         id: "biotin",
         title: "Biotin Plus",
-        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767477335/ADAM_16_fvjfum.jpg", // Placeholder
+        image: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767499093/ADAM_20_gdttf6.jpg", // Placeholder
 
         bgColor: "bg-[#EAEAEA]",
         freeGift: false,

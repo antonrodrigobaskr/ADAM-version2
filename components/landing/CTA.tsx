@@ -8,8 +8,20 @@ export function CTA() {
         <section className="py-20 md:py-32">
             <div className="container mx-auto px-4">
                 <div className="relative rounded-3xl overflow-hidden bg-primary px-6 py-20 text-center md:px-20 lg:py-32">
-                    {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+                    {/* Video Background */}
+                    <div className="absolute inset-0 z-0">
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                        >
+                            <source src="https://www.pexels.com/download/video/4761738/" type="video/mp4" />
+                        </video>
+                        {/* Overlay for contrast */}
+                        {/* <div className="absolute inset-0 bg-black/60" /> */}
+                    </div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
