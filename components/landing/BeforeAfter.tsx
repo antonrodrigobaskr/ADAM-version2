@@ -23,24 +23,24 @@ const results = [
     },
     {
         id: 2,
-        treatment: "Oral Tablet, Minoxidil 5%, Shampoo, Biotin",
-        duration: "10 months",
-        before: "/placeholder.svg",
-        after: "/placeholder.svg"
+        treatment: "Minoxidil 5%, Finasteride 0.25%, Ketoconazole Shampoo",
+        duration: "3 months",
+        before: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767556946/3_qrldis.jpg",
+        after: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767556946/4_vgb8xb.jpg"
     },
     {
         id: 3,
-        treatment: "Oral Tablet, Minoxidil 5%",
-        duration: "9 months",
-        before: "/placeholder.svg",
-        after: "/placeholder.svg"
+        treatment: "Minoxidil 5%",
+        duration: "4 months",
+        before: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767556946/7_uhntnj.jpg",
+        after: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767556946/8_l24k6f.jpg"
     },
     {
         id: 4,
-        treatment: "Topical Spray, Finasteride",
+        treatment: "Topical Spray Minoxidil, Finasteride Oral",
         duration: "6 months",
-        before: "/placeholder.svg",
-        after: "/placeholder.svg"
+        before: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767556946/5_s7d9wu.jpg",
+        after: "https://res.cloudinary.com/ddzotdvev/image/upload/v1767556946/6_ri9esr.jpg"
     }
 ];
 
