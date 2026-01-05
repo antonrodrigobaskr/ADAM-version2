@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -32,7 +32,7 @@ export function Navbar() {
         { href: "/about", label: "About Us" },
     ];
 
-    const menuVariants = {
+    const menuVariants: Variants = {
         hidden: { opacity: 0, x: 20 },
         visible: (i: number) => ({
             opacity: 1,

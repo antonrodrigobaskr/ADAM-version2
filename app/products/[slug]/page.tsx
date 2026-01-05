@@ -3,8 +3,8 @@
 import * as React from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, Check, ChevronDown, Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
+import { Star, Check, ChevronDown } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { Button } from "@/components/ui/button";
@@ -55,7 +55,7 @@ const PRODUCT_DATA = {
 };
 
 export default function ProductPage() {
-    const params = useParams();
+    // const params = useParams();
     // In a real app, use params.slug to fetch data.
     // const { slug } = params;
 

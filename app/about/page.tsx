@@ -1,11 +1,11 @@
 "use client";
 
 import { Navbar } from "@/components/layout/Navbar";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const fadeInUp = {
+const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
         opacity: 1,
@@ -42,7 +42,7 @@ export default function AboutPage() {
                             </span>
                         </h1>
                         <p className="mt-1 text-neutral-500 text-base md:text-lg max-w-xl mx-auto font-[family-name:var(--font-manrope)]">
-                            Redefining men's healthcare in Sri Lanka—one conversation at a time.
+                            Redefining men&apos;s healthcare in Sri Lanka—one conversation at a time.
                         </p>
                     </motion.div>
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
                                     Our Why
                                 </h2>
                                 <p className="text-neutral-600 text-sm md:text-base leading-relaxed font-[family-name:var(--font-manrope)]">
-                                    Men's health is often neglected—not because men don't care, but because the system makes it
+                                    Men&apos;s health is often neglected—not because men don&apos;t care, but because the system makes it
                                     <span className="text-primary font-medium"> inconvenient and uncomfortable</span> to seek help.
                                     We exist to change that.
                                 </p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-primary mt-0.5">•</span>
-                                        <span><span className="font-semibold text-neutral-900">Accessible to all.</span> Quality healthcare shouldn't be a luxury.</span>
+                                        <span><span className="font-semibold text-neutral-900">Accessible to all.</span> Quality healthcare shouldn&apos;t be a luxury.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -111,17 +111,18 @@ export default function AboutPage() {
                                     Long-term Vision
                                 </h2>
                                 <p className="text-neutral-600 text-sm md:text-base leading-relaxed font-[family-name:var(--font-manrope)]">
-                                    To become South Asia's most trusted men's health platform—where every man has
+                                    To become South Asia&apos;s most trusted men&apos;s health platform—where every man has
                                     <span className="text-primary font-medium"> access to expert care</span>,
                                     without stigma, without barriers, and without compromise.
                                 </p>
                             </div>
                         </motion.div>
-                    </div>
+                    </div >
 
                     {/* Footer CTA */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 15 }}
+                    < motion.div
+                        initial={{ opacity: 0, y: 15 }
+                        }
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7, duration: 0.4 }}
                         className="text-center mt-10 md:mt-14"
@@ -136,9 +137,9 @@ export default function AboutPage() {
                                 <ArrowRight className="w-4 h-4" />
                             </span>
                         </Link>
-                    </motion.div>
-                </div>
-            </section>
-        </main>
+                    </motion.div >
+                </div >
+            </section >
+        </main >
     );
 }
