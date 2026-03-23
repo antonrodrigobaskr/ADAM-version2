@@ -140,3 +140,45 @@
 .pause-on-hover:active {
     animation-play-state: paused;
 }
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Adya Theme V2 (White, Black, Emerald) */
+.adya {
+    --background: 0 0% 100%;       /* Pure White */
+    --foreground: 0 0% 0%;         /* Pure Black */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 166 100% 20%;       /* Dark Green #00674F */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;         /* Very light gray */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 153 47% 95%;         /* Very light emerald */
+    --accent-foreground: 153 47% 30%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 153 47% 55%;
+}
+
+.adya-gradient-blob {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    max-width: 600px;
+    max-height: 600px;
+    background: radial-gradient(circle, rgba(80, 200, 120, 0.15) 0%, rgba(80, 200, 120, 0) 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 0;
+}

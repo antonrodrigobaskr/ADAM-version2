@@ -3,6 +3,7 @@ import { Manrope, MuseoModerno } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/landing/Footer";
+import { RouteAwareLayout } from "@/components/layout/RouteAwareLayout";
 
 const manrope = Manrope({
     variable: "--font-manrope",
@@ -25,15 +26,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body
                 className={`${manrope.variable} ${museoModerno.variable} antialiased bg-background text-foreground font-[family-name:var(--font-manrope)]`}
+                suppressHydrationWarning
             >
-                <Navbar />
-                <main className="min-h-screen">
-                    {children}
-                </main>
-                <Footer />
+                <RouteAwareLayout>{children}</RouteAwareLayout>
             </body>
         </html>
     );

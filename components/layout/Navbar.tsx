@@ -29,6 +29,7 @@ export function Navbar() {
     const navLinks = [
         { href: "/products/hair-regrowth-spray", label: "Hair Regrowth" },
         { href: "/sexual-health", label: "Sexual Health" },
+        { href: "/blog", label: "Blog" },
         { href: "/about", label: "About Us" },
     ];
 

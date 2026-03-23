@@ -1,0 +1,305 @@
+# 🇱🇰 Local SEO Checklist — Ranking ADAM in Sri Lanka
+
+> A comprehensive, prioritized checklist to rank **ADAM (Men's Telehealth)** locally in Sri Lanka. Items are grouped by category and ordered by impact. Issues already identified in your codebase are flagged.
+
+---
+
+## 1. Technical SEO (On-Site Foundation)
+
+> [!CAUTION]
+> Your site is currently **missing** `sitemap.xml`, `robots.txt`, and structured data — these are critical baseline items.
+
+### 1.1 Crawlability & Indexing
+- [ ] **Create `robots.txt`** — Add `app/robots.ts` (Next.js route handler) allowing all crawlers and pointing to the sitemap
+- [ ] **Create XML Sitemap** — Add `app/sitemap.ts` that dynamically generates URLs for all pages (`/`, `/about`, `/products/[slug]`, `/blog/[slug]`, `/sexual-health`)
+- [ ] **Submit sitemap to Google Search Console** — Verify ownership and submit the generated sitemap URL
+- [ ] **Submit sitemap to Bing Webmaster Tools** — Secondary but still important
+- [ ] **Check for crawl errors** weekly via Search Console → Coverage report
+- [ ] **Ensure all pages return 200 status** — No soft 404s
+- [ ] **Canonical tags** — Add canonical URLs to every page to prevent duplicate content
+
+### 1.2 Page Speed & Core Web Vitals
+- [ ] **Run Lighthouse audit** on every page — target score ≥ 90 on Performance
+- [ ] **Optimize images** — Use Next.js `<Image>` component with `priority` on above-the-fold images, use WebP/AVIF
+- [ ] **Lazy load below-fold images** — Ensure images not in viewport use `loading="lazy"`
+- [ ] **Minimize JavaScript bundle** — Audit with `next build --analyze` (install `@next/bundle-analyzer`)
+- [ ] **Enable Gzip/Brotli compression** on the hosting provider (Vercel does this by default)
+- [ ] **Set proper cache headers** for static assets
+- [ ] **Reduce Largest Contentful Paint (LCP)** — Preload hero image/font
+- [ ] **Reduce Cumulative Layout Shift (CLS)** — Set explicit `width`/`height` on all images
+- [ ] **Reduce Interaction to Next Paint (INP)** — Minimize JS blocking on user interactions
+
+### 1.3 Mobile-First
+- [ ] **Verify mobile responsiveness** on all pages (Google indexes mobile-first)
+- [ ] **Test with Google Mobile-Friendly Test tool**
+- [ ] **Ensure tap targets are ≥ 48px**
+- [ ] **No horizontal scrolling** on any breakpoint
+
+### 1.4 HTTPS & Security
+- [ ] **Ensure HTTPS is enforced** site-wide (redirect HTTP → HTTPS)
+- [ ] **HSTS header** enabled
+- [ ] **No mixed content** (all resources loaded over HTTPS)
+
+---
+
+## 2. On-Page SEO (Content & Metadata)
+
+> [!WARNING]
+> Your root layout has a generic title `"ADAM - Men's Telehealth"` and description. Every page needs **unique, keyword-rich** metadata.
+
+### 2.1 Metadata Per Page
+| Page | Suggested Title | Suggested Description |
+|------|----------------|----------------------|
+| `/` (Home) | `ADAM - Men's Health & Telehealth Sri Lanka \| Hair Loss, ED & Wellness` | `Sri Lanka's leading men's telehealth platform. Online consultations with licensed Sri Lankan doctors for hair loss, ED, and wellness. Discreet & affordable.` |
+| `/about` | `About ADAM \| Sri Lanka's #1 Men's Health Platform` | `Learn about ADAM's mission to provide accessible, discreet healthcare for men across Sri Lanka. Meet our team of licensed doctors.` |
+| `/products/[slug]` | Dynamic: `{Product Name} \| ADAM Men's Health Sri Lanka` | Dynamic: description from product data |
+| `/blog/[slug]` | Dynamic: `{Article Title} \| ADAM Health Blog` | Dynamic: first 155 chars of article |
+| `/sexual-health` | `Sexual Health Solutions for Men \| ADAM Sri Lanka` | `Confidential sexual health consultations and treatments for men in Sri Lanka. FDA-approved medications. Doctor-prescribed.` |
+
+- [ ] **Add unique `<title>` tags** to every page (50–60 chars, include "Sri Lanka")
+- [ ] **Add unique `<meta description>`** to every page (150–160 chars)
+- [ ] **Add Open Graph tags** (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`)
+- [ ] **Add Twitter Card tags** (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`)
+- [ ] **Create a compelling OG image** (1200×630px) for social sharing
+
+### 2.2 Heading Structure
+- [ ] **One `<h1>` per page** — keyword-rich and descriptive
+- [ ] **Logical heading hierarchy** — `<h1>` → `<h2>` → `<h3>`, no skipped levels
+- [ ] **Include geo-modifier in at least one heading** — e.g., "Men's Health Solutions *in Sri Lanka*"
+
+### 2.3 Content Optimization
+- [ ] **Target primary keywords per page:**
+  - Home: `men's health sri lanka`, `telehealth sri lanka`, `online doctor sri lanka`
+  - Products: `{product name} sri lanka`, `buy {product} online sri lanka`
+  - Blog: long-tail informational queries (see §6)
+  - Sexual Health: `sexual health clinic sri lanka`, `ED treatment sri lanka`
+- [ ] **Natural keyword density** — 1–2% for primary keyword, avoid stuffing
+- [ ] **Use LSI (related) keywords** — e.g., `men's wellness`, `hair regrowth`, `testosterone`, `telehealth consultation`
+- [ ] **Add alt text to ALL images** — descriptive and keyword-relevant
+- [ ] **Internal linking** — Link between related pages (e.g., blog articles → product pages)
+- [ ] **External links** — Link to authoritative medical sources (WHO, NIH) for trust signals
+
+### 2.4 URL Structure
+- [ ] **Clean, readable URLs** — e.g., `/products/minoxidil-5-topical-solution` not `/products/prod123`
+- [ ] **Include keywords in slugs** — keep them short and descriptive
+- [ ] **Lowercase URLs only**, no special characters
+
+---
+
+## 3. Structured Data (Schema Markup)
+
+> [!IMPORTANT]
+> Structured data is **completely missing** from your site. This is a huge missed opportunity for rich results.
+
+- [ ] **Organization Schema** — Add to root layout
+  ```json
+  {
+    "@type": "Organization",
+    "name": "ADAM",
+    "url": "https://adamhealth.lk",
+    "logo": "https://adamhealth.lk/logo.png",
+    "sameAs": ["facebook-url", "instagram-url"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "LK",
+      "addressLocality": "Colombo"
+    }
+  }
+  ```
+- [ ] **MedicalBusiness / HealthAndBeautyBusiness Schema** — For local business signals
+- [ ] **Product Schema** — On each product page (name, description, price, availability)
+- [ ] **FAQPage Schema** — On the FAQ section (generates rich FAQ snippets in Google)
+- [ ] **Article / BlogPosting Schema** — On each blog post (headline, author, datePublished, image)
+- [ ] **BreadcrumbList Schema** — For navigation breadcrumbs
+- [ ] **Review / AggregateRating Schema** — If you have customer reviews
+- [ ] **MedicalWebPage Schema** — For health-related content pages
+- [ ] **Validate all schema** with [Google Rich Results Test](https://search.google.com/test/rich-results)
+
+---
+
+## 4. Locale & Language Targeting
+
+> [!WARNING]
+> Your site uses `lang="en"` but has no explicit Sri Lanka geo-targeting. Google needs stronger signals.
+
+- [ ] **Use a `.lk` domain** (e.g., `adamhealth.lk`) — strongest geo-signal, OR:
+- [ ] **Use a subdirectory** (e.g., `adam.com/lk/`) if using a generic TLD
+- [ ] **Set geo-target in Google Search Console** → Settings → International Targeting → Country = Sri Lanka
+- [ ] **Add `hreflang` tag**: `<link rel="alternate" hreflang="en-LK" href="https://yoursite.lk/" />`
+- [ ] **Consider Sinhala/Tamil content** — Even a few key pages in Sinhala (`si`) or Tamil (`ta`) would help:
+  - [ ] Add `hreflang="si-LK"` and `hreflang="ta-LK"` alternate versions
+  - [ ] Target keywords in Sinhala script for low-competition wins
+- [ ] **Use Sri Lankan currency (LKR)** in product pricing with proper markup
+- [ ] **Sri Lankan phone number format** — Display in `+94 XX XXX XXXX` format
+- [ ] **Sri Lankan address** — Display physical or registered business address on site
+
+---
+
+## 5. Google Business Profile (GBP) & Local Listings
+
+> [!IMPORTANT]
+> This is the **#1 factor** for local pack rankings (the map results).
+
+### 5.1 Google Business Profile
+- [ ] **Create/claim Google Business Profile** at [business.google.com](https://business.google.com)
+- [ ] **Choose correct category**: `Telehealth Service` or `Health Consultant`
+- [ ] **Add secondary categories**: `Men's Health Clinic`, `Online Pharmacy`
+- [ ] **Complete ALL profile fields**:
+  - Business name (exact match to website)
+  - Address (if you have a physical location)
+  - Service areas (Colombo, Kandy, Galle, etc.)
+  - Phone number
+  - Website URL
+  - Business hours
+  - Business description (750 chars, keyword-rich)
+- [ ] **Upload high-quality photos** — logo, team, office, products (minimum 10 photos)
+- [ ] **Add all services** with descriptions
+- [ ] **Enable messaging**
+- [ ] **Post weekly Google Business updates** (offers, health tips, new products)
+- [ ] **Respond to ALL reviews** within 24 hours
+
+### 5.2 Local Citations & Directories (Sri Lanka-Specific)
+- [ ] **List on Sri Lankan business directories**:
+  - [LankaBusinessOnline.com](https://lankabusinessonline.com)
+  - [Cylex.lk](https://www.cylex.lk)
+  - [BusinessList.lk](https://businesslist.lk)
+  - [YellowPages.lk](https://www.yellowpages.lk)
+  - [Srilankabusiness.com](https://srilankabusiness.com)
+- [ ] **List on healthcare-specific directories**:
+  - [Doctorlk.com](https://doctorlk.com)
+  - [HealthNet.lk](https://healthnet.lk)
+- [ ] **List on global directories**:
+  - Yelp, Bing Places, Apple Maps, Facebook Business Page
+- [ ] **Ensure NAP consistency** — Name, Address, Phone must be **identical** across ALL listings
+
+---
+
+## 6. Content Strategy (Blog & Topical Authority)
+
+> [!TIP]
+> Consistent, high-quality blog content is your biggest lever for long-tail traffic in Sri Lanka, where competition is relatively low.
+
+### 6.1 Keyword Research (Sri Lanka Focus)
+- [ ] **Research keywords using**:
+  - Google Keyword Planner (set location to Sri Lanka)
+  - Ubersuggest (filter by LK)
+  - AnswerThePublic
+  - Google Trends (filter by Sri Lanka)
+  - "People Also Ask" boxes for Sri Lankan queries
+- [ ] **Target question-based keywords** — these often have zero competition in LK:
+  - "best hair loss treatment in Sri Lanka"
+  - "online doctor consultation Sri Lanka"
+  - "is telehealth available in Sri Lanka"
+  - "ED treatment price Sri Lanka"
+  - "men's health clinic Colombo"
+  - "hair regrowth treatment cost Sri Lanka"
+
+### 6.2 Content Calendar
+- [ ] **Publish 2–4 blog posts per month** minimum
+- [ ] **Mix content types**:
+  - Informational: "How does minoxidil work?"
+  - Local: "Best men's health clinics in Colombo"
+  - Comparison: "Telehealth vs in-person doctor visits in Sri Lanka"
+  - Guide: "Complete guide to treating hair loss in Sri Lanka"
+  - FAQ: "Is online prescription legal in Sri Lanka?"
+- [ ] **Create pillar pages** — comprehensive guides (2000+ words) for each main topic:
+  - Pillar: "Men's Hair Loss in Sri Lanka" → links to 10+ supporting blog posts
+  - Pillar: "Men's Sexual Health Guide" → links to treatments, FAQs, doctor info
+- [ ] **Add a dedicated FAQ page** `/faq` with common questions (great for featured snippets)
+
+### 6.3 Content Quality
+- [ ] **E-E-A-T compliance** (Experience, Expertise, Authority, Trust):
+  - [ ] Author bio with medical credentials on every blog post
+  - [ ] "Medically reviewed by Dr. [Name]" badges
+  - [ ] Link to doctor's credentials/license verification
+  - [ ] Cite peer-reviewed sources
+- [ ] **Add a "Medical Disclaimer"** page
+- [ ] **Add "About Our Doctors"** page with full bios, photos, credentials
+- [ ] **Add a "Privacy Policy"** and **"Terms of Service"** page
+
+---
+
+## 7. Backlink Strategy
+
+### 7.1 Local Backlinks (High Priority)
+- [ ] **Partner with Sri Lankan health blogs** for guest posts
+- [ ] **Get featured in Sri Lankan news outlets**:
+  - Daily Mirror, Sunday Times, Daily FT, Economy Next, Roar.lk
+- [ ] **Collaborate with Sri Lankan health influencers** on Instagram/YouTube
+- [ ] **Sponsor local health events** (Colombo Marathon, health expos)
+- [ ] **Submit press releases** to Sri Lankan PR distribution services
+- [ ] **Partner with Sri Lankan pharmacies** for mutual linking
+
+### 7.2 Industry Backlinks
+- [ ] **Get listed on telehealth aggregators/comparison sites**
+- [ ] **Contribute expert opinions to health publications**
+- [ ] **Create linkable assets** — infographics, statistics pages ("Men's Health Stats in Sri Lanka")
+- [ ] **HARO (Help a Reporter Out)** — respond to health-related journalist queries
+
+### 7.3 Digital PR
+- [ ] **Create a "Sri Lanka Men's Health Report"** — shareable research content
+- [ ] **Develop free tools** — "Hair Loss Assessment Quiz" (already have QuizCTA — optimize this for backlinks)
+
+---
+
+## 8. Social Signals & Brand Building
+
+- [ ] **Active Facebook page** (Sri Lanka's #1 social platform)
+- [ ] **Active Instagram** with health tips, before/after content (anonymized)
+- [ ] **YouTube channel** — short doctor Q&A videos in English + Sinhala
+- [ ] **TikTok** — short-form health tips (growing rapidly in Sri Lanka)
+- [ ] **LinkedIn** — company page for B2B credibility
+- [ ] **WhatsApp Business** — for direct customer communication (huge in Sri Lanka)
+- [ ] **Share every blog post** on social channels
+- [ ] **Engage with Sri Lankan health communities** on Facebook groups
+
+---
+
+## 9. Reviews & Reputation Management
+
+- [ ] **Actively solicit Google reviews** from satisfied patients (post-consultation email)
+- [ ] **Make it easy to leave a review** — Short link on website, WhatsApp auto-message
+- [ ] **Display reviews/testimonials on website** with structured data
+- [ ] **Respond to every review** — positive and negative
+- [ ] **Target 50+ Google reviews in first 6 months** (competitive benchmark for SL)
+- [ ] **Encourage reviews on Facebook** as well (secondary signal)
+
+---
+
+## 10. Analytics & Monitoring
+
+- [ ] **Google Search Console** — Set up and monitor weekly
+- [ ] **Google Analytics 4** — Install and configure conversion tracking
+- [ ] **Track key events**:
+  - Consultation bookings
+  - Product page views
+  - Blog engagement (scroll depth, time on page)
+  - Quiz completions
+- [ ] **Set up rank tracking** — Monitor positions for target keywords (Ahrefs, SEMrush, or free: Google Search Console)
+- [ ] **Monitor Core Web Vitals** monthly
+- [ ] **Set up Google Alerts** for brand name "ADAM" + "men's health Sri Lanka"
+- [ ] **Monthly SEO audit** — Check for broken links, crawl errors, new opportunities
+
+---
+
+## 11. Immediate Action Items (Priority Order)
+
+These are the items to implement **first** based on your current site audit:
+
+| # | Action | Impact | Effort |
+|---|--------|--------|--------|
+| 1 | Create `robots.txt` | 🔴 Critical | 🟢 Easy |
+| 2 | Create `sitemap.xml` | 🔴 Critical | 🟢 Easy |
+| 3 | Add unique metadata to every page | 🔴 Critical | 🟡 Medium |
+| 4 | Add Organization + FAQ structured data | 🔴 Critical | 🟡 Medium |
+| 5 | Set up Google Business Profile | 🔴 Critical | 🟡 Medium |
+| 6 | Submit to Google Search Console | 🔴 Critical | 🟢 Easy |
+| 7 | Add Open Graph / Twitter Card tags | 🟡 High | 🟢 Easy |
+| 8 | Add `hreflang` for `en-LK` | 🟡 High | 🟢 Easy |
+| 9 | List on 5 Sri Lankan directories | 🟡 High | 🟡 Medium |
+| 10 | Start publishing 2 blog posts/month | 🟡 High | 🔴 Ongoing |
+
+---
+
+> [!NOTE]
+> **Estimated timeline to see results**: Local SEO in Sri Lanka is less competitive than Western markets. With consistent effort, expect to see movement in **3–4 months** and meaningful traffic growth in **6–8 months**. Blog content targeting long-tail Sri Lankan queries can rank within **2–4 weeks** due to low competition.
