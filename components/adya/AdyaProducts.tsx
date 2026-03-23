@@ -20,8 +20,8 @@ const product = {
         "Alcohol-Free",
         "Non-Greasy Serum",
     ],
-    price: "Rs 4,960",
-    plans: "3, 6 months",
+    price: "TBA",
+    plans: "Customized",
 };
 
 export function AdyaProducts() {
@@ -100,14 +100,13 @@ export function AdyaProducts() {
                                 {/* Price Info */}
                                 <div className="flex border-t border-black/5 pt-6 mb-8">
                                     <div className="w-1/2 pr-4 border-r border-black/10">
-                                        <div className="text-xs text-black/40 font-semibold mb-1">Starting from</div>
+                                        <div className="text-xs text-black/40 font-semibold mb-1">Pricing</div>
                                         <div className="text-lg font-bold text-black">
-                                            {product.price}{" "}
-                                            <span className="text-sm font-normal text-black/40">per month</span>
+                                            {product.price}
                                         </div>
                                     </div>
                                     <div className="w-1/2 pl-4">
-                                        <div className="text-xs text-black/40 font-semibold mb-1">Available plans</div>
+                                        <div className="text-xs text-black/40 font-semibold mb-1">Treatment plans</div>
                                         <div className="text-lg font-medium text-black">{product.plans}</div>
                                     </div>
                                 </div>
