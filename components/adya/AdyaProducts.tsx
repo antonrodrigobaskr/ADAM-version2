@@ -20,8 +20,8 @@ const product = {
         "Alcohol-Free",
         "Non-Greasy Serum",
     ],
-    price: "TBA",
-    plans: "Customized",
+    price: "Releasing Soon",
+    plans: "2, 3, 6 months",
 };
 
 export function AdyaProducts() {
@@ -106,7 +106,7 @@ export function AdyaProducts() {
                                         </div>
                                     </div>
                                     <div className="w-1/2 pl-4">
-                                        <div className="text-xs text-black/40 font-semibold mb-1">Treatment plans</div>
+                                        <div className="text-xs text-black/40 font-semibold mb-1">Available plans</div>
                                         <div className="text-lg font-medium text-black">{product.plans}</div>
                                     </div>
                                 </div>
